@@ -1,27 +1,56 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import './componentes.css'
+import { Link, useHistory } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext'
 
-const FormularioInicio = ()=>{
-    // const {nombre,setNombre}=useState("");
-    
-    
-    return(
+export const FormularioInicio = () => {
+    const { login } = useAuth();
+    const [error, setError] = useState(null);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const history = useHistory();
+
+
+    const handleEmail = (e) => setEmail(e.target.value);
+    const handlePassword = (e) => setPassword(e.target.value);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        login(email, password)
+            .then((userCredential) => {
+                console.log("ha sido logueado");
+                history.push('/');
+
+                var user = userCredential.user;
+                console.log(user, "este es user")
+            })
+            .catch((error) => {
+                // setError('Wrong Credentials');
+                setTimeout(() => setError(''), 1500);
+            });
+    }
+    return (
         <>
-       <div className="login">
-<h1>Formulario</h1>
-<form>
-    <div className="grupo">
-    <input type="email" id="nombre" name="nombre" className="barra" />
-    <label htmlFor="nombre">Email</label>
-    </div>
-    <div className="grupo">
-    <input type="password" id="contraseña" name="contraeña" className="barra"/>
-    <label htmlFor="contraseña">Contraseña</label>
-    </div>
-</form>
-</div>
-</>
-)};
+            <div className="login">
+                <div className='card-header' >
+                    {error && <p className='error' >{error}</p>}
+                    <h1>LOGIN</h1>
+                </div>
 
-
-export default FormularioInicio
+                <form onSubmit={handleSubmit}>
+                    <div className="grupo">
+                        <input type="email" className="barra" onChange={handleEmail} />
+                        <label htmlFor="nombre">Email</label>
+                    </div>
+                    <div className="grupo">
+                        <input type="password" className="barra" onChange={handlePassword} />
+                        <label htmlFor="contraseña">Contraseña</label>
+                    </div>
+                    <button type='submit' className="btn">Iniciar Sesión</button>
+                </form>
+                <p>¿No tienes una cuenta? <Link to='./signup'>Registrate</Link> </p>
+            </div>
+        </>
+    )
+};

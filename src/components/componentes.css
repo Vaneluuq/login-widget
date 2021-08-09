@@ -1,13 +1,33 @@
 .login{
+  background-color: white; 
   display: flex;
-  flex-direction: column;
-  justify-content: right;
+  flex-flow: column;
+  padding: 10px;
+  align-content:  center;
+  justify-content: center;
+  width: 50vw;
+  height:70vh ;
+  position: relative;
+  left: 25%;
+  top: 100px;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  font-size: small ;
+}
+.login div {
+  display: flex;
+  justify-content: center;
   align-content: center;
+}
+.login p{
+  text-align: center;
+  font-weight:100;
 }
 .login h1{
   text-align: center;
   font-weight: 700;
 }
+
 .login input{
   background: none;
   color:#c6c6c6;
@@ -43,4 +63,17 @@
 }
 .barra{
   width: 40vw;
+}
+.btn{
+  font-family: "roboto";
+ background-color: #4C5059 ;
+ padding: 5px;
+ margin: 10px auto;
+ border: none;
+ display: block;
+ width: 40vw;
+ height: 40px;
+ color: white;
+ font-size: 16px;
+ cursor: pointer;
 }

@@ -1,59 +1,31 @@
 import './App.css';
 import React from 'react';
-import FormularioInicio from './components/formularioInicio';
-import FormularioRegistro from './components/formularioRegistro';
+import { FormularioInicio } from './components/formularioInicio';
+import { FormularioRegistro } from './components/formularioRegistro';
+import { Home } from './components/home';
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
+  BrowserRouter as Router, Switch, Route
 } from "react-router-dom";
-import firebase from './firebase/firebase';
-
+import { AuthProvider } from './context/AuthContext'
+import { PrivateRoute } from './components/PrivateRoute'
 
 function App() {
-  const Boton = () => {
-    return (
-      <button className="btn" >Iniciar sesión</button>
-    )
-  }
-  const Registro = () => {
-    return (
-      <button className="btn" >Registrarse</button>
-    )
-  }
+
   return (
-    <Router>
-      <Switch>
-        <Route path="/Registro">
-          <div className="container">
-           <div><FormularioRegistro /></div> 
-           <div>
-              <Link to="./"><Registro/></Link>
-            </div>
-            <div>¿Ya tienes una cuenta?
-              <Link to="./">Inicia sesión</Link>
-            </div>
-          </div>
+    <>
+    <AuthProvider>
+      <Router>
+        <Switch>
+          <PrivateRoute exact path='/' component={Home} />
+          <Route exact path='/login' component={FormularioInicio} />
+          <Route exact path='/signup' component={FormularioRegistro} />
+        </Switch>
+      </Router>
+    </AuthProvider>
+    </>
 
-        </Route>
-        <Route path="/">
-          <div className="container">
-            <div><FormularioInicio /></div>
-            <div>
-              <Link to="./"><Boton /></Link>
-            </div>
-            <div>¿no tiene una cuenta?
-              <Link to="./Registro">Registrate</Link>
-            </div>
-          </div>
+  )
 
-
-
-        </Route>
-      </Switch>
-    </Router>
-  );
 }
 
 export default App;
