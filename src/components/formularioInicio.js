@@ -19,14 +19,11 @@ export const FormularioInicio = () => {
         e.preventDefault();
         login(email, password)
             .then((userCredential) => {
-                console.log("ha sido logueado");
                 history.push('/');
 
-                var user = userCredential.user;
-                console.log(user, "este es user")
             })
             .catch((error) => {
-                // setError('Wrong Credentials');
+                setError('Wrong Credentials');
                 setTimeout(() => setError(''), 1500);
             });
     }

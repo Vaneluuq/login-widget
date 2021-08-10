@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-
 import { useAuth } from '../context/AuthContext';
+import eliminar from '../img/eliminar.png'
+import meGusta from '../img/me-gusta.png'
+import notas from '../img/notas.png'
+import logo from '../img/logo2.PNG'
 
 export const Home = () => {
 
@@ -17,16 +20,36 @@ export const Home = () => {
   }
   return (
     <div className='card'>
-      <div className='card-header' >
+      <div className='barra' >
         {error && <p className='error' >{error}</p>}
-        <img src='https://cdn0.iconfinder.com/data/icons/set-ui-app-android/32/8-512.png' alt='user' className='user-photo' />
+
+        <input type="text" placeholder='Añadir nota'></input>
+        
+        <img src={logo}/>
       </div>
-      <div className='card-body'>
-        <h1>Welcome</h1>
-        <p>{currentUser.email}</p>
-        <button className='logout-button' onClick={handleLogout} >Log Out</button>
+     
+      <div className='barra-lateral'> 
+      <h1>{currentUser.email}</h1>
+
+      <div className='eliminado' >
+        <img src={eliminar}/>
+      <button > Eliminado</button>
       </div>
+      <div className='favorito'>
+        <img src={meGusta}/>
+      <button >Favoritos</button>
+      </div>
+      <div className='notas'>
+      <img src={notas}/>
+      <button  >Mis notas</button>
+      </div>
+     
+      <div className='logout' >
+        <button  onClick={handleLogout} >Log Out</button>
+     </div> 
+     
+     </div>
 
     </div>
   )
-  }
+}

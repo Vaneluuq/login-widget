@@ -45,8 +45,9 @@ export const FormularioRegistro = () => {
             <div className="login">
                 <div className='card-header' >
                     {error && <p className='error' >{error}</p>}
-                    <h1>Registrarse</h1>
                 </div>
+                
+                 <h1>Registrarse</h1>
 
                 <form onSubmit={handleSubmit}>
 
