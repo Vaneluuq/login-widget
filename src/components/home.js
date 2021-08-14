@@ -3,7 +3,8 @@ import { useAuth } from '../context/AuthContext';
 import eliminar from '../img/eliminar.png'
 import meGusta from '../img/me-gusta.png'
 import notas from '../img/notas.png'
-import logo from '../img/logo2.PNG'
+import logo from '../img/Captura.PNG'
+import { Contenedor } from './contenedor.js'
 
 export const Home = () => {
 
@@ -18,38 +19,32 @@ export const Home = () => {
       setError('Server Error');
     }
   }
+  
+
   return (
-    <div className='card'>
+    <div className='home'>
       <div className='barra' >
         {error && <p className='error' >{error}</p>}
 
-        <input type="text" placeholder='Añadir nota'></input>
+
+        <img src={logo} />
+      </div>
+
+      <div className='barra-lateral'>
         
-        <img src={logo}/>
-      </div>
-     
-      <div className='barra-lateral'> 
-      <h1>{currentUser.email}</h1>
+          <h1>{currentUser.email}</h1>
+        <div className='agregar-notas'>
+       
+          <button className="agregar-nota" >Agregar Nota</button>
+        </div>
 
-      <div className='eliminado' >
-        <img src={eliminar}/>
-      <button > Eliminado</button>
-      </div>
-      <div className='favorito'>
-        <img src={meGusta}/>
-      <button >Favoritos</button>
-      </div>
-      <div className='notas'>
-      <img src={notas}/>
-      <button  >Mis notas</button>
-      </div>
-     
-      <div className='logout' >
-        <button  onClick={handleLogout} >Log Out</button>
-     </div> 
-     
-     </div>
+        <div className='logout' >
+          <button onClick={handleLogout} >Log Out</button>
+        </div>
 
+
+      </div>
+      <div><Contenedor /></div>
     </div>
   )
 }
