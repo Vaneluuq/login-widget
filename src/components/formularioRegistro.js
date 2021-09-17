@@ -7,7 +7,7 @@ import styles from '../CSS/form.module.css'
 
 
 export const FormularioRegistro = () => {
-    
+
     const { signup } = useAuth();
 
     const [email, setEmail] = useState('');
@@ -45,14 +45,15 @@ export const FormularioRegistro = () => {
 
     return (
         <>
-         <img src={Figuro} alt="logo" className={styles.logo} />
+            <img src={Figuro} alt="logo" className={styles.logo} />
             <div className={styles.grupoContainer}>
-                <div >
-                    <h2>Crea tu cuenta</h2>
-                    <p>Al crear tu cuenta asegurate de que tu contraseña tenga al menos una mayuscula, numero  o caracter especial</p>
-                    <form className={styles.formLogin}  onSubmit={handleSubmit} >
+                <div className={styles.contenedorForm} >
+                    <div> <h2>Crea tu cuenta</h2></div>
+                    <div><p>Al crear tu cuenta asegurate de que tu contraseña tenga al menos una mayuscula, numero  o caracter especial</p></div>
+                   
+                    <form className={styles.formLogin} onSubmit={handleSubmit} >
                         <label className={styles.tex}>Tu Nombre</label>
-                        <input type="tex" name="name" className={styles.input}  placeholder="name"  />
+                        <input type="tex" name="name" className={styles.input} placeholder="name" />
                         <label>Tu Apellido</label>
                         <input type="text" name="lasName" className={styles.input} placeholder="Apellido" />
                         <label>Soy</label>
@@ -60,18 +61,20 @@ export const FormularioRegistro = () => {
                         <label>Vivo en</label>
                         <input type="text" name="country" className={styles.input} />
                         <label htmlFor="nombre">Email</label>
-                        <input type="email" name="email" id="email" placeholder="email" className={styles.input}  onChange={handleEmail}/>
+                        <input type="email" name="email" id="email" placeholder="email" className={styles.input} onChange={handleEmail} />
                         <label htmlFor="contraseña">Contraseña</label>
                         <input type="password" name="password" id="password" placeholder="password" className={styles.input} onChange={handlePassword} />
-                       <label htmlFor="nombre">Confirmar contraseña</label> 
-                       <input type="password" id="confirmContraseña" name="contraseña" className={styles.input} onChange={handleConfirmPassword} />
-                        <label> <input type="checkbox" /> He leído y estoy de acuerdo con los Términos del Servicio</label>
-                        <label className={styles.texPstyle}> <input type="checkbox" /> Este sitio recoge nombres, correos electronicos y otra informacion del usuario. Aceptolos terminos establecidos en la politicas de privacidad</label>
-                        <button id="boton-registro" className={styles.btn} > Registrarse</button>
+                        <label htmlFor="nombre">Confirmar contraseña</label>
+                        <input type="password" id="confirmContraseña" name="contraseña" className={styles.input} onChange={handleConfirmPassword} />
                     </form>
+
                 </div>
+                <div className={styles.contenedorBoton}><label> <input type="checkbox" /> He leído y estoy de acuerdo con los Términos del Servicio</label>
+                    <div><label className={styles.texPstyle}> <input type="checkbox" /> Este sitio recoge nombres, correos electronicos y otra informacion del usuario. Aceptolos terminos establecidos en la politicas de privacidad</label></div>
+                   <div><button id="boton-registro" className={styles.btn} > Registrarse</button></div>
+                    </div>
             </div>
-           
+
         </>
     )
 };
