@@ -3,13 +3,12 @@ import 'firebase/auth'
 import 'firebase/firestore'
 
 const appFirebase = firebase.initializeApp({
-    apiKey: "AIzaSyBph_PeGtla3w7mf9qUrTcrtvq4RI-di14",
-    authDomain: "lab-notes-e341c.firebaseapp.com",
-    projectId: "lab-notes-e341c",
-    storageBucket: "lab-notes-e341c.appspot.com",
-    messagingSenderId: "775294461321",
-    appId: "1:775294461321:web:776602ab2b4f847eef2d58",
-    measurementId: "G-23TS0WE6XR"
+    apiKey: "AIzaSyAWVyEqVK_3dHYofmgZS4nUgiDhEH9aleo",
+    authDomain: "figuro-widget.firebaseapp.com",
+    projectId: "figuro-widget",
+    storageBucket: "figuro-widget.appspot.com",
+    messagingSenderId: "73121794775",
+    appId: "1:73121794775:web:61f36c5090468307bcbe92"
 });
 export const auth = firebase.auth();
 
