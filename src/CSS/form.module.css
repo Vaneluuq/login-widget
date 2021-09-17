@@ -1,0 +1,83 @@
+.container{
+    background-color: #d9cfff;
+    display: grid;
+    width: 5%;
+    height: 50vh;
+    background:#f1effa;
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+
+}
+.grupoContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 20%;
+    background-color: #fff;
+    padding: 40px;
+    height: px;
+    width: 50%;
+}
+
+.logo {
+    width: 20%;
+
+}
+
+.formLogin{
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+    padding: 10px;
+}
+
+.input{
+    width: 40%;
+	background: #fff;
+	border-radius: 2px;
+	height: 25px;
+	line-height: 10px;
+	padding: 0 40px 0 10px;
+	
+}
+
+.btn{
+    width: 20%;
+}
+.texPstyle{
+font-size: large;
+}
+
+@media (min-width: 750px) {
+    .container{
+        width: 0%;
+        height:0vh;
+        background: #fff;
+        background:#f1effa;
+        display: flex;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .input{
+        width: 50%;
+        background:#f1effa;
+        border-radius: 2px;
+        height: 45px;
+        line-height: 45px;
+        width: 50%;
+        }
+    .logo{
+        width: 30%;
+        height: 10%;
+        
+    }
+    .grupoContainer{
+        display: flex;
+        flex-direction: column;
+        padding: 40%;
+        height: 45%;
+        width: 50%;
+        background-color: #d9cfff;
+        
+    }
+
+}

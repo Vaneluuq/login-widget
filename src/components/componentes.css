@@ -1,3 +1,8 @@
+.contenedor{
+  background-color: #9691ff;
+  width: 100vw;
+  height: 100vh;
+}
 .login{
   background-color: white; 
   display: flex;
@@ -13,6 +18,9 @@
   box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   font-size: small ;
+}
+.logo {
+  width: 20%;
 }
 .login div {
   display: flex;
