@@ -3,6 +3,10 @@
   width: 100vw;
   height: 100vh;
 }
+.card-header h1{
+  color: #5258Ca;
+
+}
 .login{
   background-color: white; 
   display: flex;
@@ -36,7 +40,7 @@
 }
 
 .login input{
-  background: none;
+  background: transparent;
   color:#bbb7b7;
   font-size: 18px;
   padding: 5px;
@@ -53,7 +57,7 @@
   color:rgb(94,93,93)
 }
  label{
-  color:#9FA3A6;
+  color:#9691ff;
   font-size: 16px;
   position:absolute;
   bottom: 0;
@@ -83,91 +87,17 @@
  color: rgb(43, 41, 41);
  font-size: 16px;
  cursor: pointer;
- background-color: #d9cfff;
+ background-color: #5258Ca;
  border-radius: 15px;
 }
 
 .error {
   padding: 10px;
   margin: 10px 0;
-  background-color: rgba(255, 0, 0, 0.658);
+  background-color: #9691ff;
   color: white;
   font-size: bolder;
 }
-/* home */
-.home{
-  display: grid;
-  grid-template-columns: 25% 75%;
-  
-}
-.barra{
-  background-color: #4C5059;
-  width: 100%;
-  height: 6vw;
-  grid-column: 1/4;
-}
-
-
-.barra img{
-width: 14vw;
-height: 6vw;
-margin: 5px;
-justify-content: space-between;
-}
-.barra-lateral{
-  background-color: #9FA3A6;
-  width: 100%;
-  height: 100vh;
-  grid-column: 1/2;
-  display: grid;
-  grid-template-rows: repeat(5,1fr) ;
-  align-self: center;
-   text-align: center;
- 
-}
-.barra-lateral h1{
- font-size: x-large;
-
-}
-.barra-lateral div{
-  margin: 20px;
- border-radius: 3px;
- background-color: #4C5059;
-  align-content: center;
-  height: 40px;
-  display: grid;
-  padding: 2px;
-  width: 80%;
- 
-}
-/* notas */
-.modal{
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */}
-
-
-.barra-lateral div:hover{
-  background-color: white;
-}
-
-.barra-lateral div button{
-  background: none;
-  border: none;
-  font-size: x-large;
-  text-align: center;
-  cursor: pointer;
-  
-}
-
-
 
   
 
