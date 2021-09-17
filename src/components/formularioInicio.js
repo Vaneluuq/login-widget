@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './componentes.css'
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext'
+import styles from '../CSS/form.module.css'
+import Figuro from "../assets/figuroLogo.png"
 
 export const FormularioInicio = () => {
     const { login } = useAuth();
@@ -29,6 +31,7 @@ export const FormularioInicio = () => {
     }
     return (
         <>
+        <img src={Figuro} alt="logo" className="styleLogo" />
             <div className="login">
                 <div className='card-header' >
                     {error && <p className='error' >{error}</p>}
