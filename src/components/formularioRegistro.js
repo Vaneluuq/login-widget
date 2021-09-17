@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext'
 import Figuro from "../assets/figuroLogo.png"
-import styles from '../CSS/form.module.css'
+import './componentes.css'
 
 
 
@@ -45,36 +45,33 @@ export const FormularioRegistro = () => {
 
     return (
         <>
-            <img src={Figuro} alt="logo" className={styles.logo} />
-            <div className={styles.grupoContainer}>
-                <div className={styles.contenedorForm} >
+            <img src={Figuro} alt="logo" className="styleLogo" />
+            <div className="registro">
+            <div className='card-header' >
                     <div> <h2>Crea tu cuenta</h2></div>
                     <div><p>Al crear tu cuenta asegurate de que tu contraseña tenga al menos una mayuscula, numero  o caracter especial</p></div>
-                   
-                    <form className={styles.formLogin} onSubmit={handleSubmit} >
-                        <label className={styles.tex}>Tu Nombre</label>
-                        <input type="tex" name="name" className={styles.input} placeholder="name" />
-                        <label>Tu Apellido</label>
-                        <input type="text" name="lasName" className={styles.input} placeholder="Apellido" />
-                        <label>Soy</label>
-                        <input type="text" name="gender" className={styles.input} placeholder="Hombre/Mujer" />
-                        <label>Vivo en</label>
-                        <input type="text" name="country" className={styles.input} />
-                        <label htmlFor="nombre">Email</label>
-                        <input type="email" name="email" id="email" placeholder="email" className={styles.input} onChange={handleEmail} />
-                        <label htmlFor="contraseña">Contraseña</label>
-                        <input type="password" name="password" id="password" placeholder="password" className={styles.input} onChange={handlePassword} />
-                        <label htmlFor="nombre">Confirmar contraseña</label>
-                        <input type="password" id="confirmContraseña" name="contraseña" className={styles.input} onChange={handleConfirmPassword} />
+            </div>
+                    <form  onSubmit={handleSubmit} >
+                    <div className="grupo">
+                        <input type="tex" name="name" className="barra" placeholder="Tu Nombre"  /></div>
+                    <div className="grupo">
+                        <input type="text" name="lasName" className="barra" placeholder="Tu Apellido" /></div>
+                    <div className="grupo"> 
+                        <input type="text" name="gender" className="barra" placeholder="Soy" /></div>
+                    <div className="grupo">
+                        <input type="text" name="country" className="barra"placeholder="Vivo en" /></div>
+                    <div className="grupo">
+                        
+                        <input type="email" name="email" id="email"  className="barra" onChange={handleEmail} placeholder="Email"/></div>
+                     <div className="grupo"> 
+                        <input type="password" name="password" id="password" className="barra"onChange={handlePassword}  placeholder="Contraseña"/></div>
+                        <div className="grupo"> 
+                        <input type="password" id="confirmContraseña" name="contraseña" className="barra" onChange={handleConfirmPassword} placeholder="confirmar contraseña" /></div>
+                       
+                   <div><button id="boton-registro" className="btn"> Registrarse</button></div>
                     </form>
 
-                </div>
-                <div className={styles.contenedorBoton}><label> <input type="checkbox" /> He leído y estoy de acuerdo con los Términos del Servicio</label>
-                    <div><label className={styles.texPstyle}> <input type="checkbox" /> Este sitio recoge nombres, correos electronicos y otra informacion del usuario. Aceptolos terminos establecidos en la politicas de privacidad</label></div>
-                   <div><button id="boton-registro" className={styles.btn} > Registrarse</button></div>
                     </div>
-            </div>
-
         </>
     )
 };
