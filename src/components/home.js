@@ -1,30 +1,30 @@
-import React, { useState } from 'react';
-import { useAuth } from '../context/AuthContext';
+// import React, { useState } from 'react';
+// import { useAuth } from '../context/AuthContext';
 
 
-export const Home = () => {
+// export const Home = () => {
 
-  const { logout, currentUser } = useAuth();
-  const [error, setError] = useState('');
+//   const { logout, currentUser } = useAuth();
+//   const [error, setError] = useState('');
 
 
-  const handleLogout = async () => {
-    try {
-      await logout();
-    } catch (error) {
-      setError('Server Error');
-    }
-  }
+//   const handleLogout = async () => {
+//     try {
+//       await logout();
+//     } catch (error) {
+//       setError('Server Error');
+//     }
+//   }
   
 
-  return (
+//   return (
   
 
-        <div className='logout' >
-          <button onClick={handleLogout} >Log Out</button>
-        </div>
+//         <div className='logout' >
+//           <button onClick={handleLogout} >Log Out</button>
+//         </div>
 
 
-  )
+//   )
   
-}
+// }
